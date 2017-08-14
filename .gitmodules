@@ -1,0 +1,3 @@
+[submodule "flashpy/flashx"]
+	path = flashpy/flashx
+	url = https://github.com/flashxio/FlashX.git
