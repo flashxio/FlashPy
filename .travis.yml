@@ -5,7 +5,7 @@ notifications:
 before_install:
 - sudo apt-get update
 - sudo apt-get install -y cmake libboost-dev libnuma-dev libaio-dev libhwloc-dev libatlas-base-dev zlib1g-dev numactl
-- sudo apt-get -y install python-setuptools
+- sudo apt-get -y install python-setuptools python-numpy
 - sudo pip install -r requirements.txt
 - wget https://github.com/cython/cython/archive/0.26.tar.gz -O cython.tar.gz && tar xvfz cython.tar.gz && cd cython* && sudo python setup.py install && cd -
 compiler:
