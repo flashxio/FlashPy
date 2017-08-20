@@ -5,6 +5,7 @@ notifications:
 before_install:
 - sudo apt-get update
 - sudo apt-get install -y cmake libboost-dev libnuma-dev libaio-dev libhwloc-dev libatlas-base-dev zlib1g-dev numactl
+- sudo apt-get install -y python-scipy cython
 compiler:
 - g++
 script:
