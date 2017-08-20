@@ -16,7 +16,7 @@ libmatrix = ("matrix",
                 {"sources": glob(os.path.join("flashpy", "flashx", "matrix", "*.cpp"))})
 
 # Minimum libraries we will build
-libraries = [libsafs, libmatrix]
+libraries = [libmatrix, libsafs]
 
 class flashx_clib(build_clib, object):
     def initialize_options(self):
@@ -66,11 +66,10 @@ ext_modules = cythonize(Extension(
     sources=["flashpy/mat.pyx", "flashpy/MatrixWrapper.cpp"], # the Cython source and
     # additional C++ source files
     include_dirs = ["flashpy/flashx/matrix", "flashpy/flashx/libsafs"],
-    libraries = ["hwloc", "cblas", "aio", "numa"],
+    libraries = ["matrix", "safs", "hwloc", "cblas", "aio", "numa"],
     language="c++",                               # generate&compile C++ code
     extra_compile_args=['-fopenmp', '-std=c++11', '-O2'],
     extra_link_args=['-fopenmp'],
-    #extra_objects = ["../build/matrix/libFMatrix.a", "../build/libsafs/libsafs.a"],
     ))
 
 setup(
